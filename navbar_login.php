@@ -63,10 +63,10 @@
         <li><a href="contact.php">Contact Us</a></li>
       </ul>
       <div class="navbar-form navbar-right" role="form">
-        <!-- <form action="catalogue.php" method="post" -->
         <input type="text" class="form-control" placeholder="Search..." />
-        <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
-        <!-- </form> end of searchbar form-->
+        <form class="btn-group" action="catalogue.php" method="post">
+          <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
+        </form><!-- end of searchbar form -->
         <form class="btn-group" action="navbar_login.php" method="post">
           <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
             Login <span class="caret"></span>

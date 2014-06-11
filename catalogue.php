@@ -7,7 +7,7 @@
     require 'config.php';
     session_start();
   }
-  $_SESSION['CurrentPage'] = "contact.php";
+  $_SESSION['CurrentPage'] = "catalogue.php";
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Contact Us</title>
+    <title>Catalogue</title>
 
     <!-- Bootstrap core CSS -->
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
@@ -50,9 +50,7 @@
     <div class="container" style="text-align: center">
 
       <div class="starter-template">
-        <h1>Contact Us</h1>
-        <p class="lead">FSML has over 15 branches all over Vancouver, Richmond and Burnaby.
-          <br> Find one of our branches from the list below and come visit us!</p>
+        <h1>Search</h1>
       </div>
 
     </div><!-- /.container -->

@@ -1,4 +1,4 @@
-<?php	@
+<?php	
 	// For PHP < 5.4.0
 	if (session_id() == ''){
 	// For PHP >= 5.40
