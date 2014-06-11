@@ -3,8 +3,8 @@
   if(session_id() == ''){
   // For PHP >= 5.40
   //if (session_status() == PHP_SESSION_NONE) {
-    //session_set_cookie_params(0);
-    ini_set('session.save_path', '/home/v/v6l8/public_html/tmp');
+    session_set_cookie_params(0);
+    require 'config.php';
     session_start();
     if(!isset($_SESSION['CurrentUser'])){
       header("Location: home.php");

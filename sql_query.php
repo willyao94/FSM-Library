@@ -1,15 +1,12 @@
-<?php
-	// Note 1: UBC's apache2 webserver likely has their own setting which disallows sessions to save paths
-				// ini_set will manually set the session path
-	// Note 2: Before every webpage that requires a session, include the follow two lines immediately after the php TAG		
+<?php	@
 	// For PHP < 5.4.0
 	if (session_id() == ''){
 	// For PHP >= 5.40
 	//if (session_status() == PHP_SESSION_NONE) {
-    session_set_cookie_params(0);
-    ini_set('session.save_path', '/home/v/v6l8/public_html/tmp');
-    session_start();
-    header("Location: home.php");
+   		session_set_cookie_params(0);
+    	require 'config.php';
+    	session_start();
+    	header("Location: home.php");
   }
 
 	$success = True; //keep track of errors so it redirects the page only if there are no errors
