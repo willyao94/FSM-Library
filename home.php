@@ -10,7 +10,6 @@
   $_SESSION['CurrentPage'] = "home.php";
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
