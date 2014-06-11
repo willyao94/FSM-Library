@@ -53,7 +53,7 @@
 <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="home.php">Library</a>
+      <a class="navbar-brand" href="home.php">FSM Library</a>
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">

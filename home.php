@@ -152,7 +152,11 @@
       </div><!--/row-->
 
       <!-- line at bottom -->
-      <hr></hr>
+      <!--<hr></hr>-->
+      <div id="footer">
+      <div class="container">
+        <p class="text-muted">Place sticky footer content here.</p>
+      </div>
 
     </div><!--/.container-->
 
