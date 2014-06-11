@@ -15,33 +15,30 @@
 
   include 'sql_query.php';
 
-//if(isset($_POST['SubmitLogin'])){
-if(array_key_exists('SubmitLogin',$_POST)){
+  if(array_key_exists('SubmitLogin',$_POST)){
 
-  // Connect to Oracle...
-  if ($db_conn) {
+    // Connect to Oracle...
+   if ($db_conn) {
 
-    if (array_key_exists('SubmitLogin', $_POST)) {
-      $userName = $_POST['UserNameInput'];
-      $passWord = $_POST['PasswordInput'];
-      // Update tuple using data from user
-      $tuple = array (
-        ":bind1" => $userName,
-        ":bind2" => $passWord
-      );
-      $alltuples = array ($tuple);
-      $result = executeBoundSQL("select * from patron where cardNum=:bind1 and pin=:bind2", $alltuples);
-      $success_login = false;
+    $userName = $_POST['UserNameInput'];
+    $passWord = $_POST['PasswordInput'];
+    // Update tuple using data from user
+    $tuple = array (
+      ":bind1" => $userName,
+      ":bind2" => $passWord
+    );
+    $alltuples = array ($tuple);
+    $result = executeBoundSQL("select * from patron where cardNum=:bind1 and pin=:bind2", $alltuples);
+    $success_login = false;
 
-      while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
-        $success_login = true;
-      }
+    while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
+      $success_login = true;
+    }
 
-      if ($success_login == true) {
-        $_SESSION['CurrentUser'] = $userName;
-        header("Location: ".$_SESSION['CurrentPage']);
-        exit();
-      }
+    if ($success_login == true) {
+      $_SESSION['CurrentUser'] = $userName;
+      header("Location: ".$_SESSION['CurrentPage']);
+      exit();
     }
 
     //Commit to save changes...
