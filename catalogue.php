@@ -50,7 +50,7 @@
     <div class="container" style="text-align: center">
 
       <div class="starter-template">
-        <h1>Search</h1>
+        <h1>Search results</h1>
       </div>
 
     </div><!-- /.container -->
