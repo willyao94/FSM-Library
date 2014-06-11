@@ -1,3 +1,16 @@
+<?php
+  // For PHP < 5.4.0
+  if(session_id() == ''){
+  // For PHP >= 5.40
+  //if (session_status() == PHP_SESSION_NONE) {
+    session_set_cookie_params(0);
+    ini_set('session.save_path', '/home/v/v6l8/public_html/tmp');
+    session_start();
+  }
+  $_SESSION['CurrentPage'] = "home.php";
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,7 +40,13 @@
   <body>
     
     <!-- Load the navbar -->
-    <div id="includedContent"></div>
+    <?php
+      if(!isset($_SESSION['CurrentUser'])){
+	include 'navbar_login.php';
+      } else {
+	include 'navbar_logout.php';
+      }
+    ?>
 
     <div class="container">
 
