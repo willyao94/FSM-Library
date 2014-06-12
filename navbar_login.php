@@ -15,6 +15,8 @@
 
   include 'sql_query.php';
 
+  if(isset($_POST['SubmitSearch']))
+
   if(array_key_exists('SubmitLogin',$_POST)){
 
     // Connect to Oracle...
@@ -64,8 +66,8 @@
       </ul>
       <div class="navbar-form navbar-right" role="form">
         <input type="text" class="form-control" placeholder="Search..." />
-        <form class="btn-group" action="catalogue.php" method="post">
-          <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
+        <form class="btn-group" action="navbar_login.php" method="post">
+          <button type="submit" class="btn btn-success" name="SubmitSearch"><span class="glyphicon glyphicon-search"></span></button>
         </form><!-- end of searchbar form -->
         <form class="btn-group" action="navbar_login.php" method="post">
           <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
