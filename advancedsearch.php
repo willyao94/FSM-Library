@@ -53,46 +53,64 @@
         <div class="navbar-collapse" align="left">
           <b>Limit my search results</b>
         </div>
-        <div class="row">
-          <div class="col-xs-6">
-            <div class="datapair form-inline">
-            Lanugage: 
-              <select class="form-control select-mini">
-                <option>Language - All</option>
-                <option>English</option>
-                <option>Chinese</option>
-                <option>French</option>
-                <option>Japanese</option>
+        <div style="text-align:left">
+          <div class="row">
+            <div class="col-xs-4 col-xs-offset-2 form-inline" style="padding-bottom:15px">
+              <span>Lanuage: </span>
+              <select class="form-control select-mini" name="Lanugage">
+                <option value="all">Language - All</option>
+                <option value="eng">English</option>
+                <option value="chn">Chinese</option>
+                <option value="frn">French</option>
+                <option value="jpn">Japanese</option>
+              </select>
+            </div>
+            <div class="col-xs-4 form-inline">
+              <span>Audience: </span>
+              <select class="form-control select-mini" name="Audience">
+                <option value="all">Audience - All</option>
+                <option value="adult">Adult</option>
+                <option value="child">Children</option>
+                <option value="teen">Young Adult</option>
               </select>
             </div>
           </div>
-          <div class="col-xs-6">
-            <div class="datapair form-inline">
-            Audience:  
-              <select class="form-control select-mini">
-                <option>Audience - All</option>
-                <option>Adult</option>
-                <option>Children</option>
-                <option>Young Adult</option>
+          <div class="row">
+            <div class="col-xs-4 col-xs-offset-2 form-inline" style="padding-bottom:15px">
+              <span>Available At: </span>
+              <select class="form-control select-mini" name="Availability">
+                <option value="all">Availability - All</option>
+                <option value="bby">Burnaby</option>
+                <option value="rmd">Richmond</option>
+                <option value="van">Vancouver</option>
               </select>
             </div>
-          </div>
-          <div class="col-xs-6">
-            <div class="datapair form-inline">
-            Availabile At:  
-              <select class="form-control select-mini">
-                <option>Availability - All</option>
-                <option>Burnaby</option>
-                <option>Richmond</option>
-                <option>Vancouver</option>
-              </select>
+            <div class="col-xs-4 form-inline">
+              <span>Year Published:</span>
+              <input type="text" class="form-control" placeholder="YYYY" name="Year"/>
             </div>
           </div>
-          <div class="col-xs-6">
-            <div class="datapair form-inline">
-              Year Published:
-              <input type="text" class="yeartext" placeholder="YYYY"/>
+        </div>
+        <div class="row" style="padding-top:10px">
+          <div class="col-xs-3">
+            <div class="checkbox" style="float:left">
+              <input type="checkbox" value"">
+                Option 1
+              </input>
             </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="checkbox">
+              <input type="checkbox" value"">
+                Option 3
+              </input>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            Test
+          </div>
+          <div class="col-xs-3">
+            Test
           </div>
         </div>
       </div>
