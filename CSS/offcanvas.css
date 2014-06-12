@@ -7,7 +7,7 @@ body {
   overflow-x: hidden; /* Prevent scroll on narrow devices */
 }
 body {
-  padding-top: 70px;
+  padding-top: 75px;
 }
 footer {
   padding: 30px 0;
@@ -17,7 +17,11 @@ footer {
  * Off Canvas
  * --------------------------------------------------
  */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 980px) {
+  body {
+    padding-top: 0px
+  }
+
   .row-offcanvas {
     position: relative;
     -webkit-transition: all .25s ease-out;
@@ -58,9 +62,25 @@ footer {
   }
 }
 
-.navbar-collapse{padding-top:3px;padding-bottom:3px !important}
-.dropdown-menu{width: 250px;border-top:0px;margin-top:3px;}
-.dropdown-menu .col-sm-12{margin-bottom:7px;}
+.navbar-fixed-top {
+  height: 67px;
+}
+
+.navbar-collapse{
+  padding-top:3px;
+  padding-bottom:3px !important
+}
+
+.dropdown-menu{
+  width: 250px;
+  border-top:0px;
+  margin-top:3px;
+}
+
+.dropdown-menu .col-sm-12{
+  margin-bottom:7px;
+}
+
 .dropdown-menu:after{
   content: '';
   display: inline-block;
@@ -75,4 +95,16 @@ footer {
 /* Force to have a scrollbar */
 html {
   overflow-y: scroll;
+}
+
+.select-mini {
+  font-size: 11px;
+  height: 30px;
+  width: 150px;
+}
+
+.datapair {
+  padding: 0.25em 0px;
+  width: 50%;
+  float: left;
 }

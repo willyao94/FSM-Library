@@ -9,7 +9,6 @@
   }
   $_SESSION['CurrentPage'] = "advancedsearch.php";
 
-  if()
 ?>
 
 <!DOCTYPE html>
@@ -40,15 +39,67 @@
       }
     ?>
 
-    <div class="container" style="text-align: center">
-
+    <div class="container shrink-box" style="text-align: center">
       <div class="starter-template">
-        <h1>Search Options</h1>
-      </div>
+         <h1>Search Options</h1>
 
+        <div class="input-group">
+          <input type="text" class="form-control" name="SearchBox" placeholder="Search for titles, authors, or publishers.." />
+          <form action="catalogue.php" class="input-group-btn">
+            <button type="submit" class="btn btn-success" name="SubmitSearch"><span class="glyphicon glyphicon-search"></button>
+          </form>
+        </div>
+        <br/>
+        <div class="navbar-collapse" align="left">
+          <b>Limit my search results</b>
+        </div>
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="datapair form-inline">
+            Lanugage: 
+              <select class="form-control select-mini">
+                <option>Language - All</option>
+                <option>English</option>
+                <option>Chinese</option>
+                <option>French</option>
+                <option>Japanese</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <div class="datapair form-inline">
+            Audience:  
+              <select class="form-control select-mini">
+                <option>Audience - All</option>
+                <option>Adult</option>
+                <option>Children</option>
+                <option>Young Adult</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <div class="datapair form-inline">
+            Availabile At:  
+              <select class="form-control select-mini">
+                <option>Availability - All</option>
+                <option>Burnaby</option>
+                <option>Richmond</option>
+                <option>Vancouver</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <div class="datapair form-inline">
+              Year Published:
+              <input type="text" class="yeartext" placeholder="YYYY"/>
+            </div>
+          </div>
+        </div>
+      </div>
     </div><!-- /.container -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script s:rc="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script src="./JS/offcanvas.js"></script> 
 	</body>
