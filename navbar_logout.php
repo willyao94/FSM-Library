@@ -14,9 +14,6 @@
       header("Location: ".$_SESSION['CurrentPage']);
     }
   }
-  if(isset($_POST['isEmployee'])){
-    echo "ASJDLAJDLSJALDIJASLIDJ";
-  }
 ?>
 <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
   <div class="container">
