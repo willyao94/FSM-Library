@@ -96,16 +96,3 @@ footer {
 html {
   overflow-y: scroll;
 }
-
-.select-mini {
-  font-size: 11px;
-  padding-bottom: 20px;
-  height: 30px;
-  width: 150px;
-}
-
-.datapair {
-  padding: 0.25em 0px;
-  width: 50d%;
-  float: left;
-}

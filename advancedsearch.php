@@ -59,7 +59,7 @@ $_SESSION['CurrentPage'] = "advancedsearch.php";
         <div class="row">
           <div class="col-xs-4 col-xs-offset-2 form-inline" style="padding-bottom:15px">
             <span>Lanuage: </span>
-            <select class="form-control select-mini" name="Lanugage">
+            <select class="form-control" name="Lanugage">
               <option value="all">Language - All</option>
               <option value="eng">English</option>
               <option value="chn">Chinese</option>
@@ -69,7 +69,7 @@ $_SESSION['CurrentPage'] = "advancedsearch.php";
           </div>
           <div class="col-xs-4 form-inline">
             <span>Audience: </span>
-            <select class="form-control select-mini" name="Audience">
+            <select class="form-control" name="Audience">
               <option value="all">Audience - All</option>
               <option value="adult">Adult</option>
               <option value="child">Children</option>
@@ -80,7 +80,7 @@ $_SESSION['CurrentPage'] = "advancedsearch.php";
         <div class="row">
           <div class="col-xs-4 col-xs-offset-2 form-inline" style="padding-bottom:15px">
             <span>Available At: </span>
-            <select class="form-control select-mini" name="Availability">
+            <select class="form-control" name="Availability">
               <option value="all">Availability - All</option>
               <option value="bby">Burnaby</option>
               <option value="rmd">Richmond</option>
@@ -89,7 +89,7 @@ $_SESSION['CurrentPage'] = "advancedsearch.php";
           </div>
           <div class="col-xs-4 form-inline">
             <span>Format: </span>
-            <select class="form-control select-mini" name="Format">
+            <select class="form-control" name="Format">
               <option value="all">Format - Any</option>
               <option value="adb">Audio Book</option>
               <option value="bk">Book</option>

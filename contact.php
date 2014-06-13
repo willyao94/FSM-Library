@@ -49,8 +49,8 @@
           include 'sql_query.php';
 
           function printResult($result) { //prints results from a select statement
-            echo "<table>";
-            echo "<tr><th>Name</th><th>Phone</th><th>Fax</th><th>Email</th><th>Address</th><th>Supervisor</th><th>Supervisor Contact</th></tr>";
+            echo '<table class="table table-hover">';
+            echo '<tr><th style="text-align:center">Name</th><th style="text-align:center">Phone</th><th style="text-align:center">Fax</th><th style="text-align:center">Email</th><th style="text-align:center">Address</th><th style="text-align:center">Supervisor</th><th style="text-align:center">Supervisor Contact</th></tr>';
 
             while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
             echo "<tr><td>" . $row["BNAME"] . "</td><td>" . $row["PHONE"] . "</td><td>" . $row["FAX"] . "</td><td>" . $row["BEMAIL"]  
