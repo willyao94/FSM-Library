@@ -144,7 +144,7 @@ $_SESSION['CurrentPage'] = "advancedsearch.php";
   </div><!-- /.container -->
 
 
-  <script s:rc="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   <script src="./JS/offcanvas.js"></script> 
 </body>
