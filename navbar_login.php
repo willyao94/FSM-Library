@@ -76,9 +76,11 @@
       </ul>
       <div class="navbar-form navbar-right" role="form">
         <input type="text" class="form-control" placeholder="Search..." />
+
         <form class="btn-group" action="catalogue.php" method="post">
-          <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
+          <button type="submit" class="btn btn-success" name="SubmitSearch"><span class="glyphicon glyphicon-search"></span></button>
         </form><!-- end of searchbar form -->
+
         <form class="btn-group" action="navbar_login.php" method="post">
           <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
             Login <span class="caret"></span>
@@ -101,6 +103,7 @@
             </div>
           </div>
         </form>
+        <div><a href="advancedsearch.php"><small>Advanced Search</small></a></div>
       </div>
     </div><!-- /.nav-collapse -->
   </div><!-- /.container -->
