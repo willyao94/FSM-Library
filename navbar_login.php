@@ -74,20 +74,11 @@
         <!-- Link to contact us page -->
         <li><a href="contact.php">Contact Us</a></li>
       </ul>
-      <div class="navbar-form navbar-right btn-group" role="form">
+      <div class="navbar-form" role="form">
+        <div class="row">
 
-
-        <form action="catalogue.php" method="get">
-          <div class=input-group>
-            <input type="text" class="form-control" placeholder="Search..." style="width:150px"/>
-            <div class="input-group-btn">
-              <button type="submit" class="btn btn-success" name="SubmitSearch"><span class="glyphicon glyphicon-search"></span></button>
-            </div>
-          </div>
-        </form><!-- end of searchbar form -->
-
+        <div class="col-sm-2 col-md-2 navbar-right">
         <form action="navbar_login.php" method="post">
-          <div class="input-group">
           <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
             Login <span class="caret"></span>
           </button>
@@ -108,9 +99,23 @@
               </div>
             </div>
           </div>
-        </div>
         </form>
+        </div>
+
+        <div class="col-sm-2 col-md-2 navbar-right">
+        <form action="catalogue.php" method="get">
+          <div class=input-group>
+            <input type="text" class="form-control" placeholder="Search..." style="width:150px"/>
+            <div class="input-group-btn">
+              <button type="submit" class="btn btn-success" name="SubmitSearch"><span class="glyphicon glyphicon-search"></span></button>
+            </div>
+          </div>
+        </form><!-- end of searchbar form -->
         <div><a href="advancedsearch.php"><small>Advanced Search</small></a></div>
+        </div>
+        
+        </div>
+
       </div>
     </div><!-- /.nav-collapse -->
   </div><!-- /.container -->
