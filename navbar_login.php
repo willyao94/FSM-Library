@@ -28,7 +28,17 @@
       ":bind2" => $passWord
     );
     $alltuples = array ($tuple);
-    $result = executeBoundSQL("select * from patron where cardNum=:bind1 and pin=:bind2", $alltuples);
+
+    $result;
+    $isEmployee = false;
+
+    if (strlen($userName) == 9) {
+        $result = executeBoundSQL("select * from patron where cardNum=:bind1 and pin=:bind2", $alltuples);
+    } else {
+        $result = executeBoundSQL("select * from employee_worksat where eid=:bind1 and password=:bind2", $alltuples);
+        $isEmployee = true;
+    }
+
     $success_login = false;
 
     while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
@@ -37,6 +47,8 @@
 
     if ($success_login == true) {
       $_SESSION['CurrentUser'] = $userName;
+      if ($isEmployee == true)
+        $_SESSION['isEmployee'] = true;
       header("Location: ".$_SESSION['CurrentPage']);
       exit();
     }

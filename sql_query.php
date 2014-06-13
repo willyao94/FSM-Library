@@ -10,7 +10,7 @@
   }
 
 	$success = True; //keep track of errors so it redirects the page only if there are no errors
-	$db_conn = OCILogon("ora_v6l8", "a35265123", "ug");
+	$db_conn = OCILogon("ora_k0q8", "a39122122", "ug");
 
 function executePlainSQL($cmdstr) { //takes a plain (no bound variables) SQL command and executes it
 	global $db_conn, $success;
