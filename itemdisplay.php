@@ -49,27 +49,40 @@
           <div class="col-xs-6 col-sm-3 sidebar-offcanvas">
             <p><b>Place Hold</b></p>
             <hr></hr>
+            <!-- NOTE: following 3 lines should be dynamic-->
             <p>Total Copies: <?php ?></p>
             <p>Available: <?php ?></p>
             <p>Holds: <?php ?></p>
             <form method="get">
               <button type="submit" class="btn btn-success" name="PlaceHold">Place Hold</button>
-              <p>On the shelves now at</p>
-
+              <p style="padding-top:10px">On the shelves now at</p>
               <!-- NOTE: this should be dynamic-->
-              <select class="form-control" name="Location" style="width:auto">
-                <option value="Britannia" name="Britannia">Britannia</option>
-                <option value="Central" name="Central">Central</option>
-                <option value="Kensington" name="Kensington">Kensington</option>
-              </select>
+              <div class="col-xs-1 col-xs-offset-1">
+                <select class="form-control" name="Location" style="width:200px">
+                  <option value="Britannia" name="Britannia">Britannia</option>
+                  <option value="Central" name="Central">Central</option>
+                  <option value="Kensington" name="Kensington">Kensington</option>
+                  <option value="HamiltonLibraryService" name="HamiltonLibraryService">Hamilton Library Service</option>
+                </select>
+              </div>
             </form>
           </div>
           <div class="col-xs-12 col-sm-9"> 
             <div class="col-xs-6">
+              <!-- NOTE: this should be dynamic -->
               <img src="http://i.imgur.com/qorxj8v.jpg"></img>
             </div>
             <div class="col-xs-4" align="left">
-              <p>Test</p>
+              <!-- NOTE: All theses should be dynamic -->
+              <p>Ttile</p>
+              <p>Author</p> <!-- maybe have this as a link to search other material by this author -->
+              <p>Type</p>
+              <p>Genres</p>
+              <p>Publisher</p><!-- same as author -->
+              <p>Year</p><!-- combine this with one above? -->
+              <p>Language</p>
+              <p>Rating</p>
+              <p>ISBN</p>
             </div>
           </div>
         </div>
