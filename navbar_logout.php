@@ -41,7 +41,7 @@
             <div class=input-group>
               <input type="text" class="form-control" placeholder="Search..." style="width:150px"/>
               <div class="input-group-btn">
-                <button type="submit" class="btn btn-success" name="SubmitSearch"><span class="glyphicon glyphicon-search"></span></button>
+                <button type="submit" class="btn btn-success" name="keyword"><span class="glyphicon glyphicon-search"></span></button>
               </div>
             </div>
           </form><!-- end of searchbar form -->
