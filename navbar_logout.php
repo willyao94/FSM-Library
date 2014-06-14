@@ -18,7 +18,7 @@
 <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="home.php">Library</a>
+      <a class="navbar-brand" href="home.php">FSM Library</a>
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
@@ -27,15 +27,29 @@
         <!-- Link to contact us page -->
         <li><a href="contact.php">Contact Us</a></li>
       </ul>
-      <div class="navbar-form navbar-right" role="form">
-        <input type="text" class="form-control" placeholder="Search..." />
-        <form class="btn-group" action="catalogue.php" method="post">
-          <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
-        </form><!-- end of searchbar form -->
-        <!-- logout button -->
-        <form class="btn-group" action="navbar_logout.php" method="POST">
-          <button type="submit" class="btn btn-success btn-sm" name="SubmitLogout">Logout</button>
-        </form>
+      <div class="navbar-form" role="form">
+        <div class="row">
+
+        <div class="col-sm-2 col-md-2 navbar-right">
+          <form class="btn-group" action="navbar_logout.php" method="POST">
+            <button type="submit" class="btn btn-success" name="SubmitLogout">Logout</button>
+          </form>
+        </div>
+
+        <div class="col-sm-2 col-md-2 navbar-right">
+          <form action="catalogue.php" method="get">
+            <div class=input-group>
+              <input type="text" class="form-control" placeholder="Search..." style="width:150px"/>
+              <div class="input-group-btn">
+                <button type="submit" class="btn btn-success" name="keyword"><span class="glyphicon glyphicon-search"></span></button>
+              </div>
+            </div>
+          </form><!-- end of searchbar form -->
+          <div><a href="advancedsearch.php"><small>Advanced Search</small></a></div>
+        </div>
+        
+        </div>
+
       </div>
     </div><!-- /.nav-collapse -->
   </div><!-- /.container -->
