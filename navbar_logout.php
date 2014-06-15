@@ -31,9 +31,32 @@
         <div class="row">
 
         <div class="col-sm-2 col-md-2 navbar-right">
-          <form class="btn-group" action="navbar_logout.php" method="POST">
-            <button type="submit" class="btn btn-success" name="SubmitLogout">Logout</button>
-          </form>
+          <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+            <?php 
+              include 'sql_query.php';
+              if($_SESSION['isEmployee']){
+                echo "Hi";
+              } else if(isset($_SESSION['CurrentUser'])){
+                $result = executePlainSQL("select name from Patron where cardNum=".$_SESSION['CurrentUser']);
+                $name;
+                while($row = OCI_FETCH_ARRAY($result, OCI_BOTH)){
+                  $name = $row["NAME"];
+                }
+                $pos = strrpos($name, " ");
+                $name = substr($name,0,$pos);
+                echo "Hi, ".$name;
+              }
+            ?>
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu" style="width:auto">
+            <li><a role="menuitem" tabindex="-1" href="account.php">My Account</a></li>
+            <li style="padding-left:20px">
+              <form action="navbar_logout.php" method="post">
+                <button type="submit" class="btn btn-success btn-sm" name="SubmitLogout">Logout</button>
+              </form>
+            </li>
+          </ul>
         </div>
 
         <div class="col-sm-2 col-md-2 navbar-right">
