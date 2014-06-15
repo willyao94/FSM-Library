@@ -2,7 +2,7 @@
 	// For PHP < 5.4.0
 	if (session_id() == ''){
 	// For PHP >= 5.40
-	//if (session_status() == PHP_SESSION_NONE) {
+	// if (session_status() == PHP_SESSION_NONE) {
    		session_set_cookie_params(0);
     	require 'config.php';
     	session_start();
@@ -11,6 +11,7 @@
 
 	$success = True; //keep track of errors so it redirects the page only if there are no errors
 	$db_conn = OCILogon("ora_k0q8", "a39122122", "ug");
+
 
 function executePlainSQL($cmdstr) { //takes a plain (no bound variables) SQL command and executes it
 	global $db_conn, $success;

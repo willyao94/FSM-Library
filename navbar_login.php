@@ -13,11 +13,11 @@
     }
   }
 
-  include 'sql_query.php';
 
   if(array_key_exists('SubmitLogin',$_POST)){
 
     // Connect to Oracle...
+   include 'sql_query.php';
    if ($db_conn) {
 
     $userName = $_POST['UserNameInput'];
