@@ -9,7 +9,3 @@ $(function () {
         event.stopPropagation();
     });
 });
-
-$(function(){
-	$("#includedContent").load("navbar.html"); 
-});
