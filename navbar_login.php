@@ -40,13 +40,20 @@
     }
 
     $success_login = false;
+    $name="";
 
     while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
       $success_login = true;
+      $name = $row['NAME'];
     }
 
     if ($success_login == true) {
       $_SESSION['CurrentUser'] = $userName;
+      if (isset($name)){
+        $pos = strrpos($name, " ");
+        $name = substr($name,0,$pos);
+        $_SESSION['CurrentName'] = $name;
+      }
       if ($isEmployee == true)
         $_SESSION['isEmployee'] = true;
       header("Location: ".$_SESSION['CurrentPage']);

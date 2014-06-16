@@ -7,6 +7,7 @@
     require 'config.php';
     session_start();
   }
+  include 'sql_query.php';
 ?>
 
 <!DOCTYPE html>
@@ -43,17 +44,19 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar" style="padding-left:20%">
             <span>CHECKED OUT</span>
-            <p>Total Items</p>
-            <p>Next Due</p>
+            <p>Total Items: 
+            <?php 
+
+            ?>
+            <br>
+              Next Due:
+            </p>
             </br>
             <span>HOLDS</span>
             <p>All Holds</p>
             </br>
             <span>OTHER</span>
             <p>Fines</p>
-            <!-- <li><a href="">Overview</a></li>
-            <li><a href="">Analytics</a></li>
-            <li><a href="">Export</a></li> -->
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">

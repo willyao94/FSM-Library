@@ -32,19 +32,9 @@
 
         <div class="col-sm-2 col-md-2 navbar-right">
           <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
-            <?php 
-              include 'sql_query.php';
-              if($_SESSION['isEmployee']){
-                echo "Hi";
-              } else if(isset($_SESSION['CurrentUser'])){
-                $result = executePlainSQL("select name from Patron where cardNum=".$_SESSION['CurrentUser']);
-                $name;
-                while($row = OCI_FETCH_ARRAY($result, OCI_BOTH)){
-                  $name = $row["NAME"];
-                }
-                $pos = strrpos($name, " ");
-                $name = substr($name,0,$pos);
-                echo "Hi, ".$name;
+            <?php
+              if(isset($_SESSION['CurrentName'])){
+                echo "Hi, ".$_SESSION['CurrentName'];
               }
             ?>
             <span class="caret"></span>
