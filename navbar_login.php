@@ -13,11 +13,11 @@
     }
   }
 
-  include 'sql_query.php';
 
   if(array_key_exists('SubmitLogin',$_POST)){
 
     // Connect to Oracle...
+   include 'sql_query.php';
    if ($db_conn) {
 
     $userName = $_POST['UserNameInput'];
@@ -28,7 +28,17 @@
       ":bind2" => $passWord
     );
     $alltuples = array ($tuple);
-    $result = executeBoundSQL("select * from patron where cardNum=:bind1 and pin=:bind2", $alltuples);
+
+    $result;
+    $isEmployee = false;
+
+    if (strlen($userName) == 9) {
+        $result = executeBoundSQL("select * from patron where cardNum=:bind1 and pin=:bind2", $alltuples);
+    } else {
+        $result = executeBoundSQL("select * from employee_worksat where eid=:bind1 and password=:bind2", $alltuples);
+        $isEmployee = true;
+    }
+
     $success_login = false;
 
     while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
@@ -37,6 +47,8 @@
 
     if ($success_login == true) {
       $_SESSION['CurrentUser'] = $userName;
+      if ($isEmployee == true)
+        $_SESSION['isEmployee'] = true;
       header("Location: ".$_SESSION['CurrentPage']);
       exit();
     }
@@ -62,12 +74,11 @@
         <!-- Link to contact us page -->
         <li><a href="contact.php">Contact Us</a></li>
       </ul>
-      <div class="navbar-form navbar-right" role="form">
-        <input type="text" class="form-control" placeholder="Search..." />
-        <form class="btn-group" action="catalogue.php" method="post">
-          <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
-        </form><!-- end of searchbar form -->
-        <form class="btn-group" action="navbar_login.php" method="post">
+      <div class="navbar-form" role="form">
+        <div class="row">
+
+        <div class="col-sm-2 col-md-2 navbar-right">
+        <form action="navbar_login.php" method="post">
           <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
             Login <span class="caret"></span>
           </button>
@@ -89,6 +100,22 @@
             </div>
           </div>
         </form>
+        </div>
+
+        <div class="col-sm-2 col-md-2 navbar-right">
+        <form action="catalogue.php" method="get">
+          <div class=input-group>
+            <input type="text" class="form-control" placeholder="Search..." style="width:150px"/>
+            <div class="input-group-btn">
+              <button type="submit" class="btn btn-success" name="keyword"><span class="glyphicon glyphicon-search"></span></button>
+            </div>
+          </div>
+        </form><!-- end of searchbar form -->
+        <div><a href="advancedsearch.php"><small>Advanced Search</small></a></div>
+        </div>
+        
+        </div>
+
       </div>
     </div><!-- /.nav-collapse -->
   </div><!-- /.container -->

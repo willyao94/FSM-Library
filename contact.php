@@ -25,15 +25,6 @@
 
     <!-- Custom styles for this template -->
     <link href="./CSS/offcanvas.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
 
   <body>
@@ -53,6 +44,27 @@
         <h1>Contact Us</h1>
         <p class="lead">FSML has over 15 branches all over Vancouver, Richmond and Burnaby.
           <br> Find one of our branches from the list below and come visit us!</p>
+
+        <?php
+          include 'sql_query.php';
+
+          function printResult($result) { //prints results from a select statement
+            echo '<table class="table table-hover">';
+            echo '<tr><th style="text-align:center">Name</th><th style="text-align:center">Phone</th><th style="text-align:center">Fax</th><th style="text-align:center">Email</th><th style="text-align:center">Address</th><th style="text-align:center">Supervisor</th><th style="text-align:center">Supervisor Contact</th></tr>';
+
+            while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
+            echo "<tr><td>" . $row["BNAME"] . "</td><td>" . $row["PHONE"] . "</td><td>" . $row["FAX"] . "</td><td>" . $row["BEMAIL"]  
+                  . "</td><td>" . $row["ADDRESS"] . "</td><td>" . $row["ENAME"] . "</td><td>" . $row["EEMAIL"] . "</td></tr>";
+            }
+           echo "</table>";
+         }
+
+         $result = executePlainSQL("select B.name as bname, B.phone, B.fax, B.email as bemail, B.address, E.name as ename, E.email as eemail
+                                      from LibraryBranch B, Employee_WorksAt E
+                                      where B.eidSupervisor = E.eid");
+          printResult($result); 
+       ?>
+
       </div>
 
     </div><!-- /.container -->
@@ -60,5 +72,5 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script src="./JS/offcanvas.js"></script> 
-	</body>
+  </body>
 </html>

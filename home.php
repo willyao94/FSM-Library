@@ -10,7 +10,6 @@
   $_SESSION['CurrentPage'] = "home.php";
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -54,7 +53,7 @@
 
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
           <div class="list-group">
-            <a href="#" class="list-group-item">Thing 1</a>
+            <a href="itemdisplay.php" class="list-group-item">Item Display Testing</a>
             <a href="#" class="list-group-item">Thing 2</a>
             <a href="#" class="list-group-item">Thing 3</a>
             <a href="#" class="list-group-item">Thing 4</a>
